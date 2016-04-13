@@ -1,0 +1,62 @@
+{% extends 'home/main.html' %}
+
+{% block content %}
+<div class="row">
+
+
+<form class="form-horizontal" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+<fieldset>
+
+<!-- Form Name -->
+<legend>Add New Item</legend>
+
+<!-- File Button -->
+<div class="form-group">
+<label class="col-md-4 control-label" for="image">Item Image</label>
+<div class="col-md-4">
+  <input id="image" name="image" class="input-file" type="file">
+</div>
+</div>
+
+
+<!-- Text input-->
+<div class="form-group">
+<label class="col-md-4 control-label" for="name">Item Name</label>
+<div class="col-md-4">
+<input id="name" name="name" type="text" placeholder="Item name" class="form-control input-md" required="">
+
+</div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+<label class="col-md-4 control-label" for="price">Item Price</label>
+<div class="col-md-4">
+<input id="price" name="price" type="text" placeholder="price" class="form-control input-md" required="">
+
+</div>
+</div>
+
+
+<!-- Textarea -->
+<div class="form-group">
+<label class="col-md-4 control-label" for="info">Item Description </label>
+<div class="col-md-4">
+  <textarea class="form-control" id="info" name="info"></textarea>
+</div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+<label class="col-md-4 control-label" for="addnewitem"></label>
+<div class="col-md-4">
+  <button id="addnewitem" name="addnewitem" class="btn btn-primary">Add</button>
+</div>
+</div>
+
+</fieldset>
+</form>
+
+</div>
+{% endblock %}
