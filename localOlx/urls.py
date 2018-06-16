@@ -17,17 +17,17 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
-import home
+from home import views
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^home','home.views.index',name="home"),
-    url(r'^login','home.views.login',name="login"),
-    url(r'^signup','home.views.signup',name="signup"),
-    url(r'^additem','home.views.additem',name="additem"),
-    url(r'^logout','home.views.logout',name="logout"),
-    url(r'^myitem','home.views.myitem',name="myitem"),
-    url(r'^help','home.views.help',name="help"),
+    url(r'^home',views.index,name="home"),
+    url(r'^login',views.login,name="login"),
+    url(r'^signup',views.signup,name="signup"),
+    url(r'^additem',views.additem,name="additem"),
+    url(r'^logout',views.logout,name="logout"),
+    url(r'^myitem',views.myitem,name="myitem"),
+    url(r'^help',views.help,name="help"),
 
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

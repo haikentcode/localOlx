@@ -60,7 +60,7 @@ def login(request):
      flag=False
      try:
           user=User.objects.get(emailId=emailId)
-          if user.emailId==emailId and user.password==password:
+          if user.emailId==emailId and user.password==password :
                flag=True
                request.session['user']=emailId
                return HttpResponseRedirect('/home')
