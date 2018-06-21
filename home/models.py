@@ -1,9 +1,9 @@
 from django.db import models
-from django.contrib import admin
-from datetime import datetime
+# Create your models here.
 
 Image_Folder="media/"
-# Create your models here.
+
+
 
 class User(models.Model):
     firstName=models.CharField(max_length=50)
@@ -21,6 +21,8 @@ class User(models.Model):
         pass
 
 
+
+
 class  Item(models.Model):
        name=models.CharField(max_length=100)
        image=models.ImageField(upload_to=Image_Folder)
@@ -29,7 +31,6 @@ class  Item(models.Model):
        user=models.ForeignKey(User,on_delete=models.CASCADE,)
        status=models.CharField(max_length=10)
        date=models.DateField(blank=True,null=True)
-
 
        def __str__(self):
            return self.name

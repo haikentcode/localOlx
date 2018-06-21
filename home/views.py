@@ -6,7 +6,6 @@ from home.forms import SignupForm, ItemForm
 import datetime
 import time
 
-
 def handle_uploaded_file(f,name):
     ext=str(name.split(".").pop())
     name=str(time.time()).replace(".","")
