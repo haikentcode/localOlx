@@ -1,5 +1,5 @@
 from django.db import models
-# Create your models here.
+from django.utils.safestring import mark_safe
 
 Image_Folder="media/"
 
@@ -37,6 +37,7 @@ class  Item(models.Model):
 
        def image_tag(self):
           #--hkcheck--flag .. "/media/" use var
-          return '<img src="/media/%s" width="100px" height="100px"/>' % self.image
+          return mark_safe('<img src="/media/%s" width="100px" height="100px"/>' % self.image)
+
        image_tag.short_description = 'Item Image'
        image_tag.allow_tags = True
