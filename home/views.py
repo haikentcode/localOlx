@@ -45,9 +45,9 @@ def signup(request):
            user.save()
            request.session['user']=request.POST.get('emailId')
            return HttpResponseRedirect('/home')
-        except Exception,e:
+        except Exception as e:
             msg=e
-            print e
+            print(e)
     signupform = SignupForm()
     return render(request,'home/signup.html',{"signupform":signupform,"msg":msg})
 
@@ -66,7 +66,7 @@ def login(request):
                return HttpResponseRedirect('/home')
           else:
                flag=False
-     except Exception,e:
+     except Exception as e:
           error=e
     return render(request,'home/login.html',{"error":error})
 
@@ -81,14 +81,14 @@ def myitem(request):
                if item.user == user :
                    item.delete()
                else:
-                   print "nice try"
+                   print("nice try")
             except:
-               print "something wrong"
+               print("something wrong")
          return HttpResponseRedirect('/myitem')
 
      user=User.objects.get(emailId=request.session.get('user'))
      items=user.item_set.all()
-     print items
+     print(items)
      return render(request,'home/myitem.html',{"items":items})
 
 def additem(request):

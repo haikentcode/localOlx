@@ -1,13 +1,8 @@
-from __future__ import unicode_literals
 from django.db import models
 from django.contrib import admin
 from datetime import datetime
 
-from string import join
-import os
-import uuid
-
-Image_Folder="media/"
+sImage_Folder="media/"
 # Create your models here.
 
 class User(models.Model):
@@ -41,6 +36,6 @@ class  Item(models.Model):
 
        def image_tag(self):
           #--hkcheck--flag .. "/media/" use var
-          return u'<img src="/media/%s" width="100px" height="100px"/>' % self.image
+          return '<img src="/media/%s" width="100px" height="100px"/>' % self.image
        image_tag.short_description = 'Item Image'
        image_tag.allow_tags = True
