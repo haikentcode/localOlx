@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib import admin
 from datetime import datetime
 
-sImage_Folder="media/"
+Image_Folder="media/"
 # Create your models here.
 
 class User(models.Model):
@@ -26,7 +26,7 @@ class  Item(models.Model):
        image=models.ImageField(upload_to=Image_Folder)
        price=models.IntegerField(blank=True,null=True)
        info=models.CharField(max_length=500)
-       user=models.ForeignKey(User)
+       user=models.ForeignKey(User,on_delete=models.CASCADE,)
        status=models.CharField(max_length=10)
        date=models.DateField(blank=True,null=True)
 
